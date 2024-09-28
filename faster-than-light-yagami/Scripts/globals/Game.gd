@@ -13,5 +13,4 @@ func _ready():
 		"open_scene_on_close": "res://Scenes/main_menu.tscn"
 	})
 	
-	await get_tree().create_timer(1).timeout
-	SilentWolf.Scores.save_score("player_name", 1)
+	#SilentWolf.Scores.save_score("player name", 1)

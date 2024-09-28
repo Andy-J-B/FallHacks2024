@@ -1,11 +1,23 @@
-[gd_scene format=3 uid="uid://bdmpxse7ab4gl"]
+[gd_scene load_steps=2 format=3 uid="uid://bdmpxse7ab4gl"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_83bt8"]
 
 [node name="MainMenu" type="Node"]
+script = ExtResource("1_83bt8")
 
 [node name="play" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 128.0
+offset_top = 277.0
+offset_right = 331.0
+offset_bottom = 373.0
+text = "play"
 
 [node name="Leaderboard" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 137.0
+offset_top = 424.0
+offset_right = 331.0
+offset_bottom = 531.0
+text = "leaderboard"
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Leaderboard" to="." method="_on_leaderboard_pressed"]
