@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bdmpxse7ab4gl"]
+
+[node name="MainMenu" type="Node"]
+
+[node name="play" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Leaderboard" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
