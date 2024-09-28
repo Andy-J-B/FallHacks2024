@@ -12,7 +12,7 @@ var score:int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-    
+    current_name = get_new_name(names, old_names)
     
     
     
@@ -55,9 +55,13 @@ func _on_text_changed() -> void:
 func _on_done_button_pressed() -> void:
     if check_match(current_name, player_input.text):
         score += 1
+        print("Correct! Score: " + str(score))
         var old_key = names.find_key(current_name)
         old_names.append(old_key)
         current_name = get_new_name(names, old_names)
+    else:
+        print("Incorrect")
+        print(current_name)
         
         
     
