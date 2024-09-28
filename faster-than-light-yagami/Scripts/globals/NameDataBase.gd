@@ -1149,6 +1149,7 @@ func _ready():
 	var randomName = rng.randi_range(minName,maxName)
 	var setName = getNames(randomLanguage, randomName)
 	print("setNameWADjajkbdjkawdjkawd")
+
 	
 
 
