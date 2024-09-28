@@ -1,10 +1,14 @@
+
 [gd_scene load_steps=6 format=3 uid="uid://c0uhedq4ft7fr"]
 
+
 [ext_resource type="Texture2D" uid="uid://cdhx0mq24olgt" path="res://assets/DepressiveLoadingScreens/01.png" id="1_63ioj"]
-[ext_resource type="Texture2D" uid="uid://cfkndb2rxa02b" path="res://assets/LightSitting.jpg" id="2_umnn4"]
-[ext_resource type="Texture2D" uid="uid://ck47v5gtbo30b" path="res://assets/LightWaiting.webp" id="3_v711f"]
+[ext_resource type="VideoStream" path="res://assets/VideoSounds/Death Note- Light Yagami’s first killing spree.ogv" id="3_gi02t"]
+[ext_resource type="AudioStream" uid="uid://dpdihwyvywh2p" path="res://assets/VideoSounds/Death Note (2017) Soundtrack Theme Song [No Copyright Music] (1).ogg" id="5_dq1eh"]
 [ext_resource type="Texture2D" uid="uid://c1wxsgeblemih" path="res://assets/SBS - Portrait Frame Pack - 256x256/Frames 256x256/Wood/Wood_01/Frame_A-Wood_01-256x256.png" id="5_ilac3"]
+[ext_resource type="AudioStream" uid="uid://71xrhqh2gx4x" path="res://assets/VideoSounds/Star Wars Death Noise! [TubeRipper.cc].ogg" id="6_gqo5l"]
 [ext_resource type="Texture2D" uid="uid://c4g7aggamd5j8" path="res://assets/book_1.png" id="6_yhxou"]
+[ext_resource type="AudioStream" uid="uid://bq64ctmmj15gg" path="res://assets/VideoSounds/Angelic choir sound effect [TubeRipper.cc].ogg" id="7_80fr7"]
 
 [node name="ArtTest" type="Node2D"]
 
@@ -19,18 +23,9 @@ offset_left = -1891.0
 offset_top = -1044.0
 offset_right = -347.0
 offset_bottom = -140.0
+stream = ExtResource("3_gi02t")
+volume_db = -80.0
 autoplay = true
-
-[node name="LightSitting" type="Sprite2D" parent="."]
-z_index = 1
-position = Vector2(-1691, -537)
-scale = Vector2(3.33663, 2.16456)
-texture = ExtResource("2_umnn4")
-
-[node name="LightWaiting" type="Sprite2D" parent="."]
-position = Vector2(-2868, -1008)
-scale = Vector2(0.25125, 0.25125)
-texture = ExtResource("3_v711f")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.28, 0.28)
@@ -41,6 +36,15 @@ scale = Vector2(6.28125, 3.46875)
 texture = ExtResource("5_ilac3")
 
 [node name="Book1" type="Sprite2D" parent="."]
-position = Vector2(807, 130)
-scale = Vector2(4.24444, 4.24444)
+position = Vector2(796.935, 110)
+scale = Vector2(5.70858, 5.91111)
 texture = ExtResource("6_yhxou")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_dq1eh")
+
+[node name="Death SOund" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_gqo5l")
+
+[node name="Save Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_80fr7")
