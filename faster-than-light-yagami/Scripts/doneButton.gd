@@ -1,5 +1,5 @@
 extends Button
-@onready var input_control: TextEdit = $"../inputControl"
+@onready var input_control: LineEdit = $"../inputControl"
 
 
 
