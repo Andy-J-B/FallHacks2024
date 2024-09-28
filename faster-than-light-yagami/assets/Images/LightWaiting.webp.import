@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8uqaifxkkl0m"
-path="res://.godot/imported/Frame_E-Wood_01-256x256.png-b3719f8a5e413690819aa3e9fba5b60d.ctex"
+uid="uid://ck47v5gtbo30b"
+path="res://.godot/imported/LightWaiting.webp-b2d3e599adbf47b5a2f44bc501d2e57c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/SBS - Portrait Frame Pack - 256x256/Frames 256x256/Wood/Wood_01/Frame_E-Wood_01-256x256.png"
-dest_files=["res://.godot/imported/Frame_E-Wood_01-256x256.png-b3719f8a5e413690819aa3e9fba5b60d.ctex"]
+source_file="res://assets/Images/LightWaiting.webp"
+dest_files=["res://.godot/imported/LightWaiting.webp-b2d3e599adbf47b5a2f44bc501d2e57c.ctex"]
 
 [params]
 

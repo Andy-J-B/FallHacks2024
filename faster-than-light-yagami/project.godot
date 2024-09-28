@@ -25,6 +25,10 @@ SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 enabled=PackedStringArray("res://addons/silent_wolf/plugin.cfg")
 
+[gui]
+
+theme/custom_font="res://assets/Depres_Font_1_0/Depres.woff2"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

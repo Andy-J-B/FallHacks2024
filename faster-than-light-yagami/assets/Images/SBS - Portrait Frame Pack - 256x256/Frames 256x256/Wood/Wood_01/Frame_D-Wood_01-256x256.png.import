@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4g7aggamd5j8"
-path="res://.godot/imported/book_1.png-18cbd558bed22957ced1ab780f5fbbb0.ctex"
+uid="uid://dvy6ni3hvnwhv"
+path="res://.godot/imported/Frame_D-Wood_01-256x256.png-0bfdab03f091208ae6a69f466d43f820.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/book_1.png"
-dest_files=["res://.godot/imported/book_1.png-18cbd558bed22957ced1ab780f5fbbb0.ctex"]
+source_file="res://assets/Images/SBS - Portrait Frame Pack - 256x256/Frames 256x256/Wood/Wood_01/Frame_D-Wood_01-256x256.png"
+dest_files=["res://.godot/imported/Frame_D-Wood_01-256x256.png-0bfdab03f091208ae6a69f466d43f820.ctex"]
 
 [params]
 

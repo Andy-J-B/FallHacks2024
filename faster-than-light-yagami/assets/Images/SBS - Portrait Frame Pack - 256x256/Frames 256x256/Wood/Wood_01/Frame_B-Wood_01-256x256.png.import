@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdhx0mq24olgt"
-path="res://.godot/imported/01.png-e326cb244690b32afebb7a1d7fd0ab7e.ctex"
+uid="uid://c1gea103bplhu"
+path="res://.godot/imported/Frame_B-Wood_01-256x256.png-6534bf3f3db3093b18b0a93d26a04a3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/DepressiveLoadingScreens/01.png"
-dest_files=["res://.godot/imported/01.png-e326cb244690b32afebb7a1d7fd0ab7e.ctex"]
+source_file="res://assets/Images/SBS - Portrait Frame Pack - 256x256/Frames 256x256/Wood/Wood_01/Frame_B-Wood_01-256x256.png"
+dest_files=["res://.godot/imported/Frame_B-Wood_01-256x256.png-6534bf3f3db3093b18b0a93d26a04a3d.ctex"]
 
 [params]
 

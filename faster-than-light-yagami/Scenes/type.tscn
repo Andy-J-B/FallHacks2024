@@ -18,6 +18,7 @@ offset_bottom = 370.152
 script = ExtResource("1_5xa1s")
 
 [node name="doneButton" type="Button" parent="playerControl/inputControl"]
+layout_mode = 0
 offset_left = 44.0
 offset_top = 50.0
 offset_right = 93.0
@@ -31,6 +32,5 @@ script = ExtResource("2_t00gi")
 offset_right = 40.0
 offset_bottom = 23.0
 
-[connection signal="text_changed" from="TextEdit" to="TextEdit" method="_on_text_changed"]
 [connection signal="text_changed" from="playerControl/inputControl" to="playerControl/inputControl" method="_on_text_changed"]
 [connection signal="pressed" from="playerControl/inputControl/doneButton" to="playerControl/inputControl" method="_on_done_button_pressed"]
