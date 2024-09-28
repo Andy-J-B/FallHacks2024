@@ -11,9 +11,19 @@ config_version=5
 [application]
 
 config/name="Faster Than Light Yagami"
-run/main_scene="res://Scenes/artTest.tscn"
+run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Game="*res://Scripts/globals/Game.gd"
+NameDataBase="*res://Scripts/globals/NameDataBase.gd"
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/silent_wolf/plugin.cfg")
 
 [rendering]
 
