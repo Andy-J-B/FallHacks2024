@@ -1145,18 +1145,11 @@ const maxName = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-<<<<<<< Updated upstream
 	var randomLanguage = rng.randi_range(minLanguage, maxLanguage)
 	var randomName = rng.randi_range(minName,maxName)
 	var setName = getNames(randomLanguage, randomName)
 	print("setNameWADjajkbdjkawdjkawd")
-=======
-	print("setNameWADjajkbdjkawdjkawd")
-	var randomLanguage = rng.randi_range(minLanguage, maxLanguage)
-	var randomName = rng.randi_range(minName,maxName)
-	var setName = getNames(randomLanguage, randomName)
-	
->>>>>>> Stashed changes
+
 	
 
 
