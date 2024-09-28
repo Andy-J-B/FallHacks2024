@@ -11,10 +11,10 @@
 anchors_preset = -1
 anchor_right = 0.018
 anchor_bottom = 0.026
-offset_left = 27.0
-offset_top = 13.0
-offset_right = 139.264
-offset_bottom = 90.152
+offset_left = 418.0
+offset_top = 293.0
+offset_right = 530.264
+offset_bottom = 370.152
 script = ExtResource("1_5xa1s")
 
 [node name="doneButton" type="Button" parent="playerControl/inputControl"]
@@ -26,6 +26,10 @@ text = "Done"
 script = ExtResource("2_t00gi")
 
 [node name="names" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="names"]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="text_changed" from="TextEdit" to="TextEdit" method="_on_text_changed"]
 [connection signal="text_changed" from="playerControl/inputControl" to="playerControl/inputControl" method="_on_text_changed"]
