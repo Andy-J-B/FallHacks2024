@@ -1,12 +1,18 @@
 
 [gd_scene load_steps=4 format=3 uid="uid://divrfvaha2f0v"]
 
+
+[gd_scene load_steps=4 format=3 uid="uid://divrfvaha2f0v"]
+
 [ext_resource type="Script" path="res://Scripts/globals/NameDataBase.gd" id="1_3evnm"]
 [ext_resource type="Script" path="res://Scripts/inputControl.gd" id="1_5xa1s"]
-[ext_resource type="Script" path="res://Scripts/done_script.gd" id="3_ktrf8"]
+
+[ext_resource type="Script" path="res://Scripts/timer.gd" id="1_ltdt0"]
+[ext_resource type="Script" path="res://Scripts/doneButton.gd" id="2_t00gi"]
 
 [node name="main" type="Node"]
-script = ExtResource("1_3evnm")
+script = ExtResource("1_ltdt0")
+
 
 [node name="playerControl" type="Node" parent="."]
 
@@ -23,27 +29,31 @@ offset_right = 1090.0
 offset_bottom = 256.0
 script = ExtResource("1_5xa1s")
 
-[node name="doneLabel" type="Label" parent="playerControl"]
-offset_left = 832.0
-offset_top = 279.0
-offset_right = 960.0
-offset_bottom = 311.0
-text = "Waiting"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("3_ktrf8")
+[node name="doneButton" type="Button" parent="playerControl/inputControl"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 50.0
+offset_right = 93.0
+offset_bottom = 81.0
+text = "Done"
+script = ExtResource("2_t00gi")
 
-[node name="livesSaved" type="Label" parent="playerControl"]
-offset_left = 840.0
-offset_top = 320.0
-offset_right = 960.0
-offset_bottom = 344.0
-text = "Lives Saved: 0"
+[node name="names" type="Node" parent="."]
 
-[node name="displayName" type="Node" parent="."]
-script = ExtResource("1_3evnm")
+[node name="Label" type="Label" parent="names"]
+offset_right = 40.0
+offset_bottom = 23.0
 
-[connection signal="pressed" from="playerControl/doneButton" to="playerControl/inputControl" method="_on_done_button_pressed"]
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="ClockCountdown" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [connection signal="text_changed" from="playerControl/inputControl" to="playerControl/inputControl" method="_on_text_changed"]
-[connection signal="text_submitted" from="playerControl/inputControl" to="playerControl/inputControl" method="_on_text_submitted"]
+[connection signal="pressed" from="playerControl/inputControl/doneButton" to="playerControl/inputControl" method="_on_done_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
