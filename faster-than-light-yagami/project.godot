@@ -21,6 +21,10 @@ Game="*res://Scripts/globals/Game.gd"
 NameDataBase="*res://Scripts/globals/NameDataBase.gd"
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/silent_wolf/plugin.cfg")
