@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://divrfvaha2f0v"]
+
+[ext_resource type="Script" path="res://Scripts/inputControl.gd" id="1_5xa1s"]
+[ext_resource type="Script" path="res://Scripts/doneButton.gd" id="2_t00gi"]
+
+[node name="main" type="Node"]
+
+[node name="playerControl" type="Node" parent="."]
+
+[node name="inputControl" type="TextEdit" parent="playerControl"]
+anchors_preset = -1
+anchor_right = 0.018
+anchor_bottom = 0.026
+offset_left = 27.0
+offset_top = 13.0
+offset_right = 139.264
+offset_bottom = 90.152
+script = ExtResource("1_5xa1s")
+
+[node name="doneButton" type="Button" parent="playerControl/inputControl"]
+offset_left = 44.0
+offset_top = 50.0
+offset_right = 93.0
+offset_bottom = 81.0
+text = "Done"
+script = ExtResource("2_t00gi")
+
+[node name="names" type="Node" parent="."]
+
+[connection signal="text_changed" from="TextEdit" to="TextEdit" method="_on_text_changed"]
+[connection signal="text_changed" from="playerControl/inputControl" to="playerControl/inputControl" method="_on_text_changed"]
+[connection signal="pressed" from="playerControl/inputControl/doneButton" to="playerControl/inputControl" method="_on_done_button_pressed"]
