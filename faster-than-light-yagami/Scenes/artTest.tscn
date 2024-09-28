@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://lsiex8b6fr13"]
+[gd_scene load_steps=7 format=3 uid="uid://c0uhedq4ft7fr"]
 
 [ext_resource type="VideoStream" path="res://assets/VideoSounds/Death Note- Light Yagami’s first killing spree.ogv" id="3_gi02t"]
 [ext_resource type="Texture2D" uid="uid://c4g7aggamd5j8" path="res://assets/Images/book_1.png" id="4_puao0"]

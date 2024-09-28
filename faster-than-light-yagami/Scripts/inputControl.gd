@@ -9,8 +9,6 @@ extends LineEdit
 
 
 
-@onready var player_input: TextEdit = self
-
 var letters_typed: int = 0
 var old_names: Array = [-1]
 var names:Dictionary = NameDataBase.englishNames
@@ -42,27 +40,10 @@ func _process(delta: float) -> void:
 
 	
 	
-func check_match(source: String, input: String) -> bool:
-	if input == source:
-		return true
-	return false
+
 	
 		
 	
-func get_new_name(names:Dictionary, old_names:Array) -> String:
-	var size = names.size()
-	var random_key = -1
-	while random_key in old_names:
-		random_key = names.keys()[randi() % size]
-	return names[random_key]
-	
-
-func _on_text_changed() -> void:
-	letters_typed = len(player_input.text)
-	print(player_input.text)
-	print("Letters Typed: " + str(letters_typed))
-	print(check_match(current_name, player_input.text))
-
 
 	
 	
@@ -112,7 +93,7 @@ func _on_text_changed(new_text: String) -> void:
 
 
 func _on_done_button_pressed() -> void:
-	if check_match(current_name, player_input.text):
+	if check_match(current_name, player_input.text, len(current_name)):
 		score += 1
 		print("Correct! Score: " + str(score))
 		var old_key = names.find_key(current_name)
@@ -128,4 +109,8 @@ func _on_done_button_pressed() -> void:
 		
 		
 		
+	pass # Replace with function body.
+
+
+func _on_timer_timeout() -> void:
 	pass # Replace with function body.
