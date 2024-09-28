@@ -1148,7 +1148,7 @@ func _ready():
 	var randomLanguage = rng.randi_range(minLanguage, maxLanguage)
 	var randomName = rng.randi_range(minName,maxName)
 	var setName = getNames(randomLanguage, randomName)
-	print("setNameWADjajkbdjkawdjkawd")
+	print(setName)
 
 	
 
