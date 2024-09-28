@@ -14,17 +14,3 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
-func _on_text_changed(new_text: String) -> void:
-	if reset == false:
-		print("Ajidjaklsfj")
-		await get_tree().create_timer(1).timeout
-		self.text = "Pending"
-		self.modulate = "#808080"
-		
-		
-		
-		reset = true
-		
-	else:
-		pass
-	

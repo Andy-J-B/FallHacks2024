@@ -10,33 +10,33 @@ script = ExtResource("1_3evnm")
 [node name="playerControl" type="Node" parent="."]
 
 [node name="doneButton" type="Button" parent="playerControl"]
-offset_left = 768.0
-offset_top = 240.0
-offset_right = 896.0
-offset_bottom = 271.0
+offset_left = 832.0
+offset_top = 280.0
+offset_right = 960.0
+offset_bottom = 311.0
 
 [node name="inputControl" type="LineEdit" parent="playerControl"]
 offset_left = 704.0
 offset_top = 192.0
-offset_right = 960.0
-offset_bottom = 232.0
+offset_right = 1090.0
+offset_bottom = 256.0
 script = ExtResource("1_5xa1s")
 
 [node name="doneLabel" type="Label" parent="playerControl"]
-offset_left = 768.0
-offset_top = 240.0
-offset_right = 896.0
-offset_bottom = 272.0
-text = "Done"
+offset_left = 832.0
+offset_top = 279.0
+offset_right = 960.0
+offset_bottom = 311.0
+text = "Waiting"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_ktrf8")
 
 [node name="livesSaved" type="Label" parent="playerControl"]
-offset_left = 768.0
-offset_top = 280.0
-offset_right = 896.0
-offset_bottom = 303.0
+offset_left = 840.0
+offset_top = 320.0
+offset_right = 960.0
+offset_bottom = 344.0
 text = "Lives Saved: 0"
 
 [node name="displayName" type="Node" parent="."]
