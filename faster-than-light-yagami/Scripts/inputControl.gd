@@ -6,6 +6,10 @@ extends LineEdit
 @onready var done_button: Button = $"../doneButton"
 @onready var done_label: Label = $"../doneLabel"
 @onready var lives_saved: Label = $"../livesSaved"
+@onready var curr_name: Label = $"../CurrentName"
+@onready var timer: Timer = $"../Timer"
+
+
 
 
 
@@ -36,6 +40,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	lives_saved.text = "Lives Saved: " + str(score)
+	curr_name.text = current_name
+	
 	pass
 	
 	
@@ -90,6 +96,7 @@ func _on_text_changed(new_text: String) -> void:
 func _on_text_submitted(new_text: String) -> void:
 	if current_name == player_input.text:
 		score += 1
+		
 		done_label.text = "SUCCESS"
 		done_button.modulate = green
 		done_label.modulate = green
@@ -99,6 +106,7 @@ func _on_text_submitted(new_text: String) -> void:
 		player_input.text = ""
 		player_input.placeholder_text = current_name
 		player_input.modulate = "#808080"
+		timer.start()
 	else:
 		done_button.modulate = red
 		done_label.modulate = red
@@ -107,3 +115,5 @@ func _on_text_submitted(new_text: String) -> void:
 		player_input.placeholder_text = current_name
 		player_input.modulate = red
 	pass # Replace with function body.
+	
+	

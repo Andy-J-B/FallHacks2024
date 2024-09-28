@@ -1,14 +1,21 @@
-
-[gd_scene load_steps=4 format=3 uid="uid://divrfvaha2f0v"]
+[gd_scene load_steps=6 format=3 uid="uid://divrfvaha2f0v"]
 
 [ext_resource type="Script" path="res://Scripts/globals/NameDataBase.gd" id="1_3evnm"]
 [ext_resource type="Script" path="res://Scripts/inputControl.gd" id="1_5xa1s"]
+[ext_resource type="PackedScene" uid="uid://c0uhedq4ft7fr" path="res://Scenes/artTest.tscn" id="2_k2gh7"]
 [ext_resource type="Script" path="res://Scripts/done_script.gd" id="3_ktrf8"]
+[ext_resource type="Script" path="res://Scripts/timer.gd" id="5_mifhr"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_3evnm")
 
-[node name="playerControl" type="Node" parent="."]
+[node name="ArtTest" parent="." instance=ExtResource("2_k2gh7")]
+position = Vector2(680, 888)
+
+[node name="playerControl" type="Node2D" parent="."]
+position = Vector2(-1568, -304)
+scale = Vector2(2.75, 2.75)
+script = ExtResource("5_mifhr")
 
 [node name="doneButton" type="Button" parent="playerControl"]
 offset_left = 832.0
@@ -38,12 +45,38 @@ offset_left = 840.0
 offset_top = 320.0
 offset_right = 960.0
 offset_bottom = 344.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 text = "Lives Saved: 0"
 
-[node name="displayName" type="Node" parent="."]
-script = ExtResource("1_3evnm")
+[node name="CurrentName" type="Label" parent="playerControl"]
+offset_left = 215.273
+offset_top = 421.818
+offset_right = 335.273
+offset_bottom = 445.818
+scale = Vector2(2.5, 2.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+text = "Benny Maxwell"
+
+[node name="Timer" type="Timer" parent="playerControl"]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="ClockCountdown" type="Label" parent="playerControl"]
+offset_left = 744.727
+offset_top = 378.182
+offset_right = 832.727
+offset_bottom = 410.182
+scale = Vector2(7.12, 7.12)
+text = "asdasdasd"
+
+[node name="timer" type="Node" parent="."]
 
 [connection signal="pressed" from="playerControl/doneButton" to="playerControl/inputControl" method="_on_done_button_pressed"]
 [connection signal="text_changed" from="playerControl/inputControl" to="playerControl/inputControl" method="_on_text_changed"]
 [connection signal="text_submitted" from="playerControl/inputControl" to="playerControl/inputControl" method="_on_text_submitted"]
-
+[connection signal="timeout" from="playerControl/Timer" to="timer" method="_on_timer_timeout"]

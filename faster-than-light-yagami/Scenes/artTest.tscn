@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=6 format=3 uid="uid://c0uhedq4ft7fr"]
-
+[gd_scene load_steps=8 format=3 uid="uid://c0uhedq4ft7fr"]
 
 [ext_resource type="Texture2D" uid="uid://cdhx0mq24olgt" path="res://assets/DepressiveLoadingScreens/01.png" id="1_63ioj"]
 [ext_resource type="VideoStream" path="res://assets/VideoSounds/Death Note- Light Yagami’s first killing spree.ogv" id="3_gi02t"]
@@ -24,8 +22,9 @@ offset_top = -1044.0
 offset_right = -347.0
 offset_bottom = -140.0
 stream = ExtResource("3_gi02t")
-volume_db = -80.0
+volume_db = 6.45
 autoplay = true
+loop = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.28, 0.28)
