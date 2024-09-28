@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bq64ctmmj15gg"
+path="res://.godot/imported/Angelic choir sound effect [TubeRipper.cc].ogg-a0b5ba361462b013e68c7f77314ec611.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/VideoSounds/Angelic choir sound effect [TubeRipper.cc].ogg"
+dest_files=["res://.godot/imported/Angelic choir sound effect [TubeRipper.cc].ogg-a0b5ba361462b013e68c7f77314ec611.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
