@@ -1,36 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://biloy8qmroc43"]
 
+[gd_scene load_steps=4 format=3 uid="uid://divrfvaha2f0v"]
+
+[ext_resource type="Script" path="res://Scripts/globals/NameDataBase.gd" id="1_3evnm"]
 [ext_resource type="Script" path="res://Scripts/inputControl.gd" id="1_5xa1s"]
-[ext_resource type="Script" path="res://Scripts/doneButton.gd" id="2_t00gi"]
+[ext_resource type="Script" path="res://Scripts/done_script.gd" id="3_ktrf8"]
 
 [node name="main" type="Node"]
+script = ExtResource("1_3evnm")
 
 [node name="playerControl" type="Node" parent="."]
 
-[node name="inputControl" type="TextEdit" parent="playerControl"]
-anchors_preset = -1
-anchor_right = 0.018
-anchor_bottom = 0.026
-offset_left = 418.0
-offset_top = 293.0
-offset_right = 530.264
-offset_bottom = 370.152
+[node name="doneButton" type="Button" parent="playerControl"]
+offset_left = 832.0
+offset_top = 280.0
+offset_right = 960.0
+offset_bottom = 311.0
+
+[node name="inputControl" type="LineEdit" parent="playerControl"]
+offset_left = 704.0
+offset_top = 192.0
+offset_right = 1090.0
+offset_bottom = 256.0
 script = ExtResource("1_5xa1s")
 
-[node name="doneButton" type="Button" parent="playerControl/inputControl"]
-layout_mode = 0
-offset_left = 44.0
-offset_top = 50.0
-offset_right = 93.0
-offset_bottom = 81.0
-text = "Done"
-script = ExtResource("2_t00gi")
+[node name="doneLabel" type="Label" parent="playerControl"]
+offset_left = 832.0
+offset_top = 279.0
+offset_right = 960.0
+offset_bottom = 311.0
+text = "Waiting"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_ktrf8")
 
-[node name="names" type="Node" parent="."]
+[node name="livesSaved" type="Label" parent="playerControl"]
+offset_left = 840.0
+offset_top = 320.0
+offset_right = 960.0
+offset_bottom = 344.0
+text = "Lives Saved: 0"
 
-[node name="Label" type="Label" parent="names"]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="displayName" type="Node" parent="."]
+script = ExtResource("1_3evnm")
 
+[connection signal="pressed" from="playerControl/doneButton" to="playerControl/inputControl" method="_on_done_button_pressed"]
 [connection signal="text_changed" from="playerControl/inputControl" to="playerControl/inputControl" method="_on_text_changed"]
-[connection signal="pressed" from="playerControl/inputControl/doneButton" to="playerControl/inputControl" method="_on_done_button_pressed"]
+[connection signal="text_submitted" from="playerControl/inputControl" to="playerControl/inputControl" method="_on_text_submitted"]
+
