@@ -8,6 +8,8 @@ extends LineEdit
 @onready var lives_saved: Label = $"../livesSaved"
 @onready var curr_name: Label = $"../CurrentName"
 @onready var timer: Timer = $"../Timer"
+@onready var death_sound: AudioStreamPlayer2D = $"../deathSound"
+
 
 
 
@@ -20,6 +22,7 @@ var names:Dictionary = NameDataBase.englishNames
 #var names: Dictionary = {0: "Benny Maxwell", 1:"Farmer John", 2:"Bryan Dela Cruz"}
 var current_name: String = ""
 var score:int = 0
+var death: bool = false
 
 var red: String = "#EE4B2B"
 var grey: String = "#808080"
@@ -39,8 +42,18 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	lives_saved.text = "Lives Saved: " + str(score)
-	curr_name.text = current_name
+	#if death == true:
+		
+	if death == false:
+		lives_saved.text = "Lives Saved: " + str(score)
+		curr_name.text = current_name
+		print(timer.time_left)
+		if timer.time_left <= 0:
+			death = true
+			print("Death")
+			if !death_sound.playing:
+				death_sound.play()
+		
 	
 	pass
 	
@@ -106,6 +119,8 @@ func _on_text_submitted(new_text: String) -> void:
 		player_input.text = ""
 		player_input.placeholder_text = current_name
 		player_input.modulate = "#808080"
+		if (timer.wait_time >= 3):
+			timer.wait_time = 10 - score/10
 		timer.start()
 	else:
 		done_button.modulate = red

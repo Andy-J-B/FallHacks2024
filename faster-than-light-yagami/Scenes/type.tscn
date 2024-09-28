@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://divrfvaha2f0v"]
+[gd_scene load_steps=7 format=3 uid="uid://divrfvaha2f0v"]
 
 [ext_resource type="Script" path="res://Scripts/globals/NameDataBase.gd" id="1_3evnm"]
 [ext_resource type="Script" path="res://Scripts/inputControl.gd" id="1_5xa1s"]
 [ext_resource type="PackedScene" uid="uid://c0uhedq4ft7fr" path="res://Scenes/artTest.tscn" id="2_k2gh7"]
 [ext_resource type="Script" path="res://Scripts/done_script.gd" id="3_ktrf8"]
 [ext_resource type="Script" path="res://Scripts/timer.gd" id="5_mifhr"]
+[ext_resource type="AudioStream" uid="uid://bdfs3xa60xja7" path="res://assets/Star Wars Death Noise! [TubeRipper.cc].ogg" id="6_kejvd"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_3evnm")
@@ -73,6 +74,12 @@ offset_right = 832.727
 offset_bottom = 410.182
 scale = Vector2(7.12, 7.12)
 text = "asdasdasd"
+
+[node name="deathSound" type="AudioStreamPlayer2D" parent="playerControl"]
+position = Vector2(570.182, 110.545)
+scale = Vector2(0.363636, 0.363636)
+stream = ExtResource("6_kejvd")
+volume_db = 24.0
 
 [node name="timer" type="Node" parent="."]
 
