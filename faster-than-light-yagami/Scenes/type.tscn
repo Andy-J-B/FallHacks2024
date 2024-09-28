@@ -25,10 +25,10 @@ offset_right = 960.0
 offset_bottom = 311.0
 
 [node name="inputControl" type="LineEdit" parent="playerControl"]
-offset_left = 704.0
-offset_top = 192.0
-offset_right = 1090.0
-offset_bottom = 256.0
+offset_left = 733.0
+offset_top = 204.0
+offset_right = 1082.0
+offset_bottom = 250.0
 script = ExtResource("1_5xa1s")
 
 [node name="doneLabel" type="Label" parent="playerControl"]
@@ -63,17 +63,21 @@ theme_override_constants/outline_size = 6
 text = "Benny Maxwell"
 
 [node name="Timer" type="Timer" parent="playerControl"]
-wait_time = 10.0
+wait_time = 15.0
 one_shot = true
 autostart = true
 
 [node name="ClockCountdown" type="Label" parent="playerControl"]
-offset_left = 744.727
-offset_top = 378.182
-offset_right = 832.727
-offset_bottom = 410.182
-scale = Vector2(7.12, 7.12)
-text = "asdasdasd"
+offset_left = 107.636
+offset_top = 482.909
+offset_right = 246.636
+offset_bottom = 510.909
+scale = Vector2(4, 4)
+theme_override_colors/font_color = Color(1, 0.0909412, 0.0594632, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 14
+text = "Time Till Death:  "
 
 [node name="deathSound" type="AudioStreamPlayer2D" parent="playerControl"]
 position = Vector2(570.182, 110.545)

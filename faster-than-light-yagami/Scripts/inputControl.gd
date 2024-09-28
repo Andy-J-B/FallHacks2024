@@ -120,7 +120,7 @@ func _on_text_submitted(new_text: String) -> void:
 		player_input.placeholder_text = current_name
 		player_input.modulate = "#808080"
 		if (timer.wait_time >= 3):
-			timer.wait_time = 10 - score/10
+			timer.wait_time = 10 - score/6
 		timer.start()
 	else:
 		done_button.modulate = red
