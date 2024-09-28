@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://rf1lwiiusq6j"]
+
+[ext_resource type="Script" path="res://Scripts/leaderboard.gd" id="1_cu3ko"]
+[ext_resource type="PackedScene" uid="uid://b2h8ok8yfc7wb" path="res://addons/silent_wolf/Scores/Leaderboard.tscn" id="2_enuen"]
+
+[node name="Leaderboard" type="CanvasLayer"]
+script = ExtResource("1_cu3ko")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 1088.0
+offset_bottom = 576.0
+
+[node name="Leaderboard" parent="." instance=ExtResource("2_enuen")]
+scale = Vector2(0.5, 0.5)
