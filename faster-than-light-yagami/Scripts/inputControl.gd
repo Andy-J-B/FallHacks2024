@@ -17,6 +17,7 @@ extends LineEdit
 var letters_typed: int = 0
 var old_names: Array = [-1]
 var names:Dictionary = NameDataBase.englishNames
+var hardNames:Dictionary = NameDataBase.hardEnglishNames
 #var names: Dictionary = {0: "Benny Maxwell", 1:"Farmer John", 2:"Bryan Dela Cruz"}
 var current_name: String = ""
 var score:int = 0
