@@ -1,22 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://divrfvaha2f0v"]
+[gd_scene load_steps=8 format=3 uid="uid://divrfvaha2f0v"]
 
+[ext_resource type="Script" path="res://Scripts/globals/NameDataBase.gd" id="1_3evnm"]
 [ext_resource type="Script" path="res://Scripts/inputControl.gd" id="1_5xa1s"]
-[ext_resource type="Script" path="res://Scripts/doneButton.gd" id="2_t00gi"]
+[ext_resource type="PackedScene" uid="uid://c0uhedq4ft7fr" path="res://Scenes/artTest.tscn" id="2_k2gh7"]
+[ext_resource type="Script" path="res://Scripts/done_script.gd" id="3_ktrf8"]
+[ext_resource type="Script" path="res://Scripts/timer.gd" id="5_mifhr"]
+[ext_resource type="AudioStream" uid="uid://bdfs3xa60xja7" path="res://assets/Star Wars Death Noise! [TubeRipper.cc].ogg" id="6_kejvd"]
+[ext_resource type="AudioStream" uid="uid://c8hdv6awxyp73" path="res://assets/scribble_short-104286.mp3" id="7_yiqcg"]
 
 [node name="main" type="Node"]
+script = ExtResource("1_3evnm")
 
-[node name="playerControl" type="Node" parent="."]
+[node name="ArtTest" parent="." instance=ExtResource("2_k2gh7")]
+position = Vector2(680, 888)
 
-<<<<<<< Updated upstream
-[node name="inputControl" type="TextEdit" parent="playerControl"]
-anchors_preset = -1
-anchor_right = 0.018
-anchor_bottom = 0.026
-offset_left = 418.0
-offset_top = 293.0
-offset_right = 530.264
-offset_bottom = 370.152
-=======
 [node name="playerControl" type="Node2D" parent="."]
 position = Vector2(-1568, -304)
 scale = Vector2(2.75, 2.75)
@@ -29,33 +26,73 @@ offset_right = 960.0
 offset_bottom = 311.0
 
 [node name="inputControl" type="LineEdit" parent="playerControl"]
-offset_left = 733.091
-offset_top = 203.636
-offset_right = 1082.09
-offset_bottom = 249.636
->>>>>>> Stashed changes
+offset_left = 733.0
+offset_top = 204.0
+offset_right = 1082.0
+offset_bottom = 250.0
 script = ExtResource("1_5xa1s")
 
-[node name="doneButton" type="Button" parent="playerControl/inputControl"]
-layout_mode = 0
-offset_left = 44.0
-offset_top = 50.0
-offset_right = 93.0
-offset_bottom = 81.0
-text = "Done"
-script = ExtResource("2_t00gi")
+[node name="doneLabel" type="Label" parent="playerControl"]
+offset_left = 832.0
+offset_top = 279.0
+offset_right = 960.0
+offset_bottom = 311.0
+text = "Waiting"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_ktrf8")
 
-[node name="names" type="Node" parent="."]
+[node name="livesSaved" type="Label" parent="playerControl"]
+offset_left = 840.0
+offset_top = 320.0
+offset_right = 960.0
+offset_bottom = 344.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+text = "Lives Saved: 0"
 
-[node name="Label" type="Label" parent="names"]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="CurrentName" type="Label" parent="playerControl"]
+offset_left = 215.273
+offset_top = 421.818
+offset_right = 335.273
+offset_bottom = 445.818
+scale = Vector2(2.5, 2.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+text = "Benny Maxwell"
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
+[node name="Timer" type="Timer" parent="playerControl"]
+wait_time = 15.0
 one_shot = true
 autostart = true
 
+[node name="ClockCountdown" type="Label" parent="playerControl"]
+offset_left = 107.636
+offset_top = 482.909
+offset_right = 246.636
+offset_bottom = 510.909
+scale = Vector2(4, 4)
+theme_override_colors/font_color = Color(1, 0.0909412, 0.0594632, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 14
+text = "Time Till Death:  "
+
+[node name="deathSound" type="AudioStreamPlayer2D" parent="playerControl"]
+position = Vector2(570.182, 110.545)
+scale = Vector2(0.363636, 0.363636)
+stream = ExtResource("6_kejvd")
+volume_db = 24.0
+
+[node name="scribble" type="AudioStreamPlayer2D" parent="playerControl"]
+stream = ExtResource("7_yiqcg")
+volume_db = 5.992
+
+[node name="timer" type="Node" parent="."]
+
+[connection signal="pressed" from="playerControl/doneButton" to="playerControl/inputControl" method="_on_done_button_pressed"]
 [connection signal="text_changed" from="playerControl/inputControl" to="playerControl/inputControl" method="_on_text_changed"]
-[connection signal="pressed" from="playerControl/inputControl/doneButton" to="playerControl/inputControl" method="_on_done_button_pressed"]
-[connection signal="timeout" from="Timer" to="playerControl/inputControl" method="_on_timer_timeout"]
+[connection signal="text_submitted" from="playerControl/inputControl" to="playerControl/inputControl" method="_on_text_submitted"]
+[connection signal="timeout" from="playerControl/Timer" to="timer" method="_on_timer_timeout"]

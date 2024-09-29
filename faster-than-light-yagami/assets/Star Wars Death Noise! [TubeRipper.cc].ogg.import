@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bdfs3xa60xja7"
+path="res://.godot/imported/Star Wars Death Noise! [TubeRipper.cc].ogg-3a735d82b00e3b28bef6e17ec14026cb.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Star Wars Death Noise! [TubeRipper.cc].ogg"
+dest_files=["res://.godot/imported/Star Wars Death Noise! [TubeRipper.cc].ogg-3a735d82b00e3b28bef6e17ec14026cb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,23 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdmpxse7ab4gl"]
+[gd_scene load_steps=3 format=3 uid="uid://bdmpxse7ab4gl"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_83bt8"]
+[ext_resource type="Texture2D" uid="uid://cdhx0mq24olgt" path="res://assets/DepressiveLoadingScreens/01.png" id="2_ltc2c"]
 
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_83bt8")
 
 [node name="play" type="Button" parent="."]
-offset_left = 128.0
-offset_top = 277.0
-offset_right = 331.0
-offset_bottom = 373.0
-text = "play"
+offset_left = 480.0
+offset_top = 280.0
+offset_right = 683.0
+offset_bottom = 376.0
+text = "Play
+"
 
 [node name="Leaderboard" type="Button" parent="."]
-offset_left = 137.0
+offset_left = 488.0
 offset_top = 424.0
-offset_right = 331.0
+offset_right = 682.0
 offset_bottom = 531.0
 text = "leaderboard"
+
+[node name="01" type="Sprite2D" parent="."]
+z_index = -11
+position = Vector2(574.08, 325.92)
+scale = Vector2(0.602, 0.611259)
+texture = ExtResource("2_ltc2c")
 
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Leaderboard" to="." method="_on_leaderboard_pressed"]

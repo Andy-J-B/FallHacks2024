@@ -1,45 +1,49 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0uhedq4ft7fr"]
+[gd_scene load_steps=8 format=3 uid="uid://c0uhedq4ft7fr"]
 
+[ext_resource type="Texture2D" uid="uid://cdhx0mq24olgt" path="res://assets/DepressiveLoadingScreens/01.png" id="1_63ioj"]
 [ext_resource type="VideoStream" path="res://assets/VideoSounds/Death Note- Light Yagami’s first killing spree.ogv" id="3_gi02t"]
-[ext_resource type="Texture2D" uid="uid://c4g7aggamd5j8" path="res://assets/Images/book_1.png" id="4_puao0"]
-[ext_resource type="AudioStream" uid="uid://br3kl7p8e6ibo" path="res://assets/VideoSounds/Death Note (2017) Soundtrack Theme Song [No Copyright Music].ogg" id="5_hbn6p"]
-[ext_resource type="Texture2D" uid="uid://c1wxsgeblemih" path="res://assets/Images/SBS - Portrait Frame Pack - 256x256/Frames 256x256/Wood/Wood_01/Frame_A-Wood_01-256x256.png" id="5_ilac3"]
-[ext_resource type="AudioStream" uid="uid://cykqapr3nf65a" path="res://assets/VideoSounds/Star Wars Death Noise! [TubeRipper.cc].ogg" id="6_gqo5l"]
-[ext_resource type="Texture2D" uid="uid://cdhx0mq24olgt" path="res://assets/Images/DepressiveLoadingScreens/01.png" id="6_yhxou"]
+[ext_resource type="AudioStream" uid="uid://dpdihwyvywh2p" path="res://assets/VideoSounds/Death Note (2017) Soundtrack Theme Song [No Copyright Music] (1).ogg" id="5_dq1eh"]
+[ext_resource type="Texture2D" uid="uid://c1wxsgeblemih" path="res://assets/SBS - Portrait Frame Pack - 256x256/Frames 256x256/Wood/Wood_01/Frame_A-Wood_01-256x256.png" id="5_ilac3"]
+[ext_resource type="AudioStream" uid="uid://71xrhqh2gx4x" path="res://assets/VideoSounds/Star Wars Death Noise! [TubeRipper.cc].ogg" id="6_gqo5l"]
+[ext_resource type="Texture2D" uid="uid://c4g7aggamd5j8" path="res://assets/book_1.png" id="6_yhxou"]
+[ext_resource type="AudioStream" uid="uid://bq64ctmmj15gg" path="res://assets/VideoSounds/Angelic choir sound effect [TubeRipper.cc].ogg" id="7_80fr7"]
 
 [node name="ArtTest" type="Node2D"]
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(0.388672, -5.50012)
+[node name="01" type="Sprite2D" parent="."]
+position = Vector2(0.388794, -5.50008)
 scale = Vector2(2.15376, 2.15463)
-texture = ExtResource("6_yhxou")
-
-[node name="FrameA-wood01-256x256" type="Sprite2D" parent="."]
-position = Vector2(-1238, -730)
-scale = Vector2(6.28125, 3.46875)
-texture = ExtResource("5_ilac3")
+texture = ExtResource("1_63ioj")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 z_index = 1
 offset_left = -1891.0
-offset_top = -1072.0
-offset_right = -415.0
-offset_bottom = -300.0
+offset_top = -1044.0
+offset_right = -347.0
+offset_bottom = -140.0
 stream = ExtResource("3_gi02t")
-volume_db = -80.0
+volume_db = 6.45
 autoplay = true
 loop = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.28, 0.28)
 
-[node name="BackGroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_hbn6p")
+[node name="FrameA-wood01-256x256" type="Sprite2D" parent="."]
+position = Vector2(-1238, -698)
+scale = Vector2(6.28125, 3.46875)
+texture = ExtResource("5_ilac3")
 
 [node name="Book1" type="Sprite2D" parent="."]
-position = Vector2(806, 109)
-scale = Vector2(5.50745, 5.67917)
-texture = ExtResource("4_puao0")
+position = Vector2(796.935, 110)
+scale = Vector2(5.70858, 5.91111)
+texture = ExtResource("6_yhxou")
 
-[node name="DeathSoundEffect" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_dq1eh")
+
+[node name="Death SOund" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_gqo5l")
+
+[node name="Save Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_80fr7")

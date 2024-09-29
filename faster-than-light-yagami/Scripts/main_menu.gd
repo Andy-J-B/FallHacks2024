@@ -1,5 +1,6 @@
 extends Node
-@onready var timer: Timer = $Timer
+
+
 
 
 func _on_play_pressed():
