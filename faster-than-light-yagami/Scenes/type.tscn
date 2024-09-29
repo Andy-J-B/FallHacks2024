@@ -7,6 +7,7 @@
 
 [node name="playerControl" type="Node" parent="."]
 
+<<<<<<< Updated upstream
 [node name="inputControl" type="TextEdit" parent="playerControl"]
 anchors_preset = -1
 anchor_right = 0.018
@@ -15,6 +16,24 @@ offset_left = 418.0
 offset_top = 293.0
 offset_right = 530.264
 offset_bottom = 370.152
+=======
+[node name="playerControl" type="Node2D" parent="."]
+position = Vector2(-1568, -304)
+scale = Vector2(2.75, 2.75)
+script = ExtResource("5_mifhr")
+
+[node name="doneButton" type="Button" parent="playerControl"]
+offset_left = 832.0
+offset_top = 280.0
+offset_right = 960.0
+offset_bottom = 311.0
+
+[node name="inputControl" type="LineEdit" parent="playerControl"]
+offset_left = 733.091
+offset_top = 203.636
+offset_right = 1082.09
+offset_bottom = 249.636
+>>>>>>> Stashed changes
 script = ExtResource("1_5xa1s")
 
 [node name="doneButton" type="Button" parent="playerControl/inputControl"]
