@@ -9,6 +9,8 @@ extends LineEdit
 @onready var curr_name: Label = $"../CurrentName"
 @onready var timer: Timer = $"../Timer"
 @onready var death_sound: AudioStreamPlayer2D = $"../deathSound"
+@onready var clock_countdown: Label = $"../ClockCountdown"
+@onready var scribble: AudioStreamPlayer2D = $"../scribble"
 
 
 
@@ -51,10 +53,12 @@ func _process(delta: float) -> void:
 		curr_name.text = current_name
 		#print(timer.time_left)
 		if timer.time_left <= 0:
-			death = true
 			if !death_sound.playing:
 				death_sound.play()
+			death = true
 	if death == true:
+		if !death_sound.playing:
+				death_sound.play()
 		player_input.editable = false
 		player_input.visible = false
 		done_label.visible = false
@@ -62,6 +66,10 @@ func _process(delta: float) -> void:
 		curr_name.visible = false
 		timer.stop()
 		lives_saved.visible = false
+		clock_countdown.visible = false
+		get_tree().change_scene_to_file("res://Scenes/gameOver.tscn")
+		
+		
 		
 		
 	
@@ -110,7 +118,6 @@ func _on_text_changed(new_text: String) -> void:
 
 func _on_text_submitted(new_text: String) -> void:
 	if current_name == player_input.text:
-		print(difficulty)
 		score += 1
 		
 		done_label.text = "SUCCESS"
@@ -122,11 +129,12 @@ func _on_text_submitted(new_text: String) -> void:
 		player_input.text = ""
 		player_input.placeholder_text = current_name
 		player_input.modulate = "#808080"
+		
 		if difficulty <8:
-			if score % 6 == 0:
+			if score % 5 == 0:
 				difficulty += 1
 		if (timer.wait_time >= 5):
-			timer.wait_time = 15 - score/6
+			timer.wait_time = 12 - score/5
 		timer.start()
 	else:
 		done_button.modulate = red

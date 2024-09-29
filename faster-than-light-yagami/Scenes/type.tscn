@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://divrfvaha2f0v"]
+[gd_scene load_steps=8 format=3 uid="uid://divrfvaha2f0v"]
 
 [ext_resource type="Script" path="res://Scripts/globals/NameDataBase.gd" id="1_3evnm"]
 [ext_resource type="Script" path="res://Scripts/inputControl.gd" id="1_5xa1s"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/done_script.gd" id="3_ktrf8"]
 [ext_resource type="Script" path="res://Scripts/timer.gd" id="5_mifhr"]
 [ext_resource type="AudioStream" uid="uid://bdfs3xa60xja7" path="res://assets/Star Wars Death Noise! [TubeRipper.cc].ogg" id="6_kejvd"]
+[ext_resource type="AudioStream" uid="uid://c8hdv6awxyp73" path="res://assets/scribble_short-104286.mp3" id="7_yiqcg"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_3evnm")
@@ -84,6 +85,10 @@ position = Vector2(570.182, 110.545)
 scale = Vector2(0.363636, 0.363636)
 stream = ExtResource("6_kejvd")
 volume_db = 24.0
+
+[node name="scribble" type="AudioStreamPlayer2D" parent="playerControl"]
+stream = ExtResource("7_yiqcg")
+volume_db = 5.992
 
 [node name="timer" type="Node" parent="."]
 

@@ -2,6 +2,7 @@ extends Node
 
 # 100 words in each language
 const englishNames = {
+	0: "Benny Maxwell",
 	1: "Aaron Smith",
 	2: "Abigail Johnson",
 	3: "Adam Williams",
